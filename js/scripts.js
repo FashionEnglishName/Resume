@@ -27,22 +27,21 @@ function fixNav() {
     if(window.scrollY > navTop) {
         document.body.style.paddingTop = `${nav.offsetHeight}px`;
         document.body.classList.add('fixed-nav');
-        keyboard.style.right = "-30vw";
     } else {
         document.body.style.paddingTop = `0px`;
         document.body.classList.remove('fixed-nav');
-        keyboard.style.right = "-50vw"
         links[0].style.color = "#333333";
     }
 
     if(window.scrollY > pagesTop[1] && window.scrollY < pagesTop[2]) {
         links[0].style.color = "white";
         links[1].style.color = "#333333";
-
+        keyboard.style.right = "-30vw";
     } else if (window.scrollY >= pagesTop[2] && window.scrollY < pagesTop[3]) {
         links[0].style.color = "#333333";
         links[1].style.color = "white";
         links[2].style.color = "#333333";
+        keyboard.style.right = "-50vw";
     }
     else if (window.scrollY >= pagesTop[3] && window.scrollY < pagesTop[4]) {
         links[1].style.color = "#333333";
@@ -54,6 +53,7 @@ function fixNav() {
         links[3].style.color = "white";
     } else {
         links[0].style.color = "#333333";
+        keyboard.style.right = "-50vw";
     }
 }
 window.addEventListener("scroll", fixNav);
