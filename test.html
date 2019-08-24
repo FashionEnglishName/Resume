@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .page {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div class="page" style="background-color: indianred"></div>
+<div class="page" style="background-color: cadetblue"></div>
+<div class="page" style="background-color: darkseagreen"></div>
+<div class="page" style="background-color: mediumpurple"></div>
+<div class="page" style="background-color: hotpink"></div>
+</body>
+<script>
+    const pages = document.querySelectorAll(".page");
+    let pageStartHeight = [];
+    pages.forEach(page => {
+        pageStartHeight.push(page.offsetTop);
+    });
+    let lastScroll = window.scrollY;
+
+    function jumpPage(e) {
+        console.log(window.scrollY, pageStartHeight);
+        if (lastScroll < window.scrollY) {
+            // scroll down
+            for(let i = pageStartHeight.length - 2; i >= 0 ; i--) {
+                if(pageStartHeight[i] < window.scrollY) {
+                    window.scrollTo({
+                        top: pageStartHeight[i+1],
+                        behavior: 'smooth'
+                    });
+                    break;
+                }
+            }
+        } else if(lastScroll > window.scrollY){
+            // scroll up
+            for(let i = 1; i < pageStartHeight.length ; i++ ) {
+                if(pageStartHeight[i] > window.scrollY) {
+
+                    window.scrollTo(0, pageStartHeight[i-1]);
+                    break;
+                }
+            }
+        }
+        lastScroll = window.scrollY;
+
+
+    }
+
+    window.addEventListener('scroll', jumpPage);
+
+</script>
+</html>
