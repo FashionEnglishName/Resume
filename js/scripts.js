@@ -92,16 +92,16 @@ function resetInfo() {
 
 triggers.forEach(trigger => trigger.addEventListener('mouseenter', highlightInfo));
 
-// Skills hoisting
-const skills = document.querySelectorAll(".skill");
-function skillHoist() {
-    this.firstElementChild.classList.add("skill-hoist");
-}
-function resetSkill() {
-    this.firstElementChild.classList.remove("skill-hoist");
-}
+// // Skills hoisting
+// const skills = document.querySelectorAll(".skill");
+// function skillHoist() {
+//     this.firstElementChild.classList.add("skill-hoist");
+// }
+// function resetSkill() {
+//     this.firstElementChild.classList.remove("skill-hoist");
+// }
 
-skills.forEach(skill => {
-    skill.addEventListener("mouseenter", skillHoist);
-    skill.addEventListener('mouseout', resetSkill);
-});
+// skills.forEach(skill => {
+//     skill.addEventListener("mouseenter", skillHoist);
+//     skill.addEventListener('mouseout', resetSkill);
+// });
