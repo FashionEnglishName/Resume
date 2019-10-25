@@ -36,7 +36,7 @@ function fixNav() {
     if(window.scrollY > pagesTop[1] && window.scrollY < pagesTop[2]) {
         links[0].style.color = "white";
         links[1].style.color = "#333333";
-        keyboard.style.right = "-30vw";
+        keyboard.style.right = "-35vw";
     } else if (window.scrollY >= pagesTop[2] && window.scrollY < pagesTop[3]) {
         links[0].style.color = "#333333";
         links[1].style.color = "white";

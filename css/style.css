@@ -116,7 +116,7 @@ nav {
     width: 100%;
     transition: all 1s;
     position: relative;
-    z-index: 1;
+    z-index: 999;
     height: 50px;
 }
 
@@ -131,6 +131,7 @@ nav ul {
     padding:0;
     list-style: none;
     display: flex;
+    z-index: 999;
 }
 
 nav li {
@@ -189,7 +190,7 @@ nav a {
 
 .info-wrap {
     margin: 25vh 0 0 8vw;
-    width: 600px;
+    width: 800px;
 }
 
 .highlighter {
@@ -222,9 +223,12 @@ nav a {
 }
 
 .card {
-    font-size: 1.5em;
+    font-size: 2em;
     display: flex;
+}
 
+.card {
+    transform: scale(0.8);
 }
 
 #wustl-card {
@@ -273,8 +277,13 @@ nav a {
     box-sizing: border-box;
 }
 
+.skill p:hover {
+    transform: scale(1.03);
+    transform-origin: left;
+}
+
 .skill-wrap {
-	width: 1100px;
+	width: 80vw;
 	display: flex;
     justify-content: space-between;
     color: black;
